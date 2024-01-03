@@ -2,6 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cors = require('cors');
+const userRoute = require('./routes/user');
+const authRoute = require('./routes/auth');
 
 
 
@@ -20,15 +22,8 @@ const connect = async () => {
 }
 
 
-
-app.get('/', () => {
-    return "Hello, world!";
-})
-
-
-
-
-
+app.use("/api/users", userRoute);
+app.use("/api/auth", authRoute);
 
 
 app.listen(1010, () => {
