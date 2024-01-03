@@ -25,6 +25,10 @@ const connect = async () => {
 app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);
 
+app.get(("/"), (req, res) => {
+    res.send("Welcome my server chatapp...")
+})
+
 
 app.listen(1010, () => {
     connect();
