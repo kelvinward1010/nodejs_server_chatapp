@@ -12,7 +12,6 @@ const findUser = async (req, res) => {
 }
 
 const getUsers = async (req, res) => {
-    const userId = req.params.userId;
     try {
         const users = await userModel.find();
 

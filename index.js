@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const userRoute = require('./routes/user');
 const authRoute = require('./routes/auth');
+const conversationRoute = require('./routes/conversation');
 
 
 
@@ -24,6 +25,7 @@ const connect = async () => {
 
 app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);
+app.use("/api/conversations", conversationRoute);
 
 app.get(("/"), (req, res) => {
     res.send("Welcome my server chatapp...")
