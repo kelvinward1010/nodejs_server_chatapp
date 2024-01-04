@@ -21,24 +21,7 @@ const getUsers = async (req, res) => {
     }
 }
 
-const getListUsersId = async (req, res) => {
-    const usersId = req.body;
-    
-    try {
-        const users = [];
-        usersId?.forEach(async (element) => {
-            const user = await userModel.findById(element);
-            users.push(user);
-        });
-
-        res.status(200).json(users)
-    } catch (error) {
-        res.status(500).json("Error: " + error.message)
-    }
-}
-
 module.exports = {
     findUser,
     getUsers,
-    getListUsersId,
 }
